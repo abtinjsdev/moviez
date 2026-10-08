@@ -5,19 +5,19 @@ Moviez is a simple and modern movie website where you can discover movies, searc
 Features
 
 -🎬 Explore a collection of movies
-- 🔎 Search for your favorite movies
-- ⭐ View movie ratings
-- 🎭 Explore movies by genre
-- 📱 Responsive design for different screen sizes
-- 🖥️ Simple and clean user interface
+-  Search for your favorite movies
+-  View movie ratings
+-  Explore movies by genre
+-  Responsive design for different screen sizes
+-  Simple and clean user interface
 
-🛠️ Built With
+ Built With
 
 - HTML
 - CSS
 - JavaScript
 
-🚀 Getting Started
+Getting Started
 
 To get a local copy of Moviez, clone the repository:
 
