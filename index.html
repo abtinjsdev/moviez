@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link id="icon" rel="icon" type="jpg" href="./src/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moviez</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 id="n-1">WELCOME TO MOVIEZ</h1>
+  <form action="getting-name" class="form">
+    <!--Movie-->
+    <input type="radio" name="type" id="movie" class="movie">
+    <label for="movie" class="movie-L">movie</label>
+
+    <!--series-->
+    <input type="radio" name="type" id="series" class="series">
+    <label for="series" class="series">series</label>
+    <!--name of series / movie-->
+    <input type="text" name="name" id="name" placeholder="movie/series">
+    <button type="submit" class="button">Submit</button>
+  </form>
+  <div id="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!--selecting the script-->
+  <script src="./js/DomAdjuster.js" type="module"></script>
+  <script src="./js/logic.js" type="module"></script>
+</body>
+
+</html>

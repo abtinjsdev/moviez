@@ -1,0 +1,640 @@
+@font-face {
+  font-family: modern;
+  src: url("./aveline-eleganza-font/AvelineEleganzaRegular-KVqeA.otf");
+}
+
+:root {
+  --bg: #000;
+  --bg-secondary: #0b0b0d;
+  --surface: #151517;
+  --surface-light: #1d1d20;
+  --text: #f5f5f7;
+  --muted: #a1a1a6;
+  --white: #fff;
+  --blue: #2997ff;
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+}
+
+/* Base */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 50% -10%,
+      #252529 0%,
+      #111114 35%,
+      #000 70%);
+  color: var(--text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Segoe UI",
+    sans-serif;
+}
+
+/* Search */
+
+#n-1 {
+  width: min(900px, 90%);
+  margin: clamp(80px, 18vh, 180px) auto 0;
+  color: var(--text);
+  text-align: center;
+  font-size: clamp(34px, 6vw, 64px);
+  font-weight: 600;
+  letter-spacing: -2px;
+  line-height: 1.05;
+}
+
+.form {
+  width: min(420px, calc(100% - 30px));
+  min-height: 330px;
+  margin: 50px auto;
+  padding: 40px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(30, 30, 32, 0.72);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+
+  box-shadow: var(--shadow);
+
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+
+.form input[type="radio"] {
+  display: none;
+}
+
+.form label {
+  width: min(270px, 85vw);
+  padding: 15px 20px;
+  margin: 5px 0;
+
+  text-align: center;
+
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 500;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.form label:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
+}
+
+.form input[type="radio"]:checked+label {
+  background: var(--white);
+  color: #000;
+  border-color: var(--white);
+}
+
+/* Input */
+
+#name {
+  width: min(270px, 85vw);
+  height: 50px;
+
+  margin-top: 20px;
+  padding: 0 18px;
+
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.07);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+
+  outline: none;
+
+  font-size: 16px;
+  text-align: center;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+#name::placeholder {
+  color: var(--muted);
+}
+
+#name:focus {
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Button */
+
+button {
+  margin-top: 22px;
+
+  min-width: 130px;
+  padding: 13px 30px;
+
+  background: var(--white);
+  color: #000;
+
+  border: 0;
+  border-radius: 980px;
+
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+button:hover {
+  background: #e8e8ed;
+  transform: scale(1.04);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Movie Card */
+
+.card {
+  width: min(1100px, 100%);
+  min-height: 90vh;
+
+  margin: 0 auto;
+  padding: 100px 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.header {
+  width: min(900px, 95%);
+
+  margin-bottom: 35px;
+
+  color: var(--text);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Segoe UI",
+    sans-serif;
+
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 600;
+  letter-spacing: -2.5px;
+  line-height: 1.05;
+
+  text-align: center;
+}
+
+/* Poster */
+
+.card a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+#poster {
+  display: block;
+
+  width: min(360px, 65vw);
+  height: auto;
+
+  border: 0;
+  border-radius: 24px;
+
+  object-fit: cover;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.7),
+    0 10px 30px rgba(0, 0, 0, 0.4);
+
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.4s ease;
+}
+
+#poster:hover {
+  transform: scale(1.025);
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.8),
+    0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Metadata */
+
+.year,
+.imdbID {
+  width: min(700px, 90%);
+
+  margin: 18px auto 0;
+
+  color: var(--muted);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.span,
+.span2 {
+  color: var(--text);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: inherit;
+}
+
+/* Details button */
+
+.details-toggle {
+  margin-top: 25px;
+
+  color: var(--muted);
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.3s ease;
+}
+
+.details-toggle:hover {
+  color: var(--white);
+  transform: translateY(3px);
+}
+
+/* Details */
+
+.details {
+  width: min(800px, 95%);
+
+  margin-top: 25px;
+}
+
+#genre,
+#actors,
+#imdb-rate,
+#total,
+#plot {
+  width: 100%;
+
+  margin: 10px auto;
+  padding: 17px 22px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  color: #d1d1d6;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  text-align: left;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+#genre:hover,
+#actors:hover,
+#imdb-rate:hover,
+#total:hover,
+#plot:hover {
+  background: var(--surface-light);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+#genre span,
+#actors span,
+#imdb-rate span,
+#total span,
+#plot span {
+  color: var(--text);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#plot {
+  line-height: 1.8;
+}
+
+/* Trailer */
+
+#trailer {
+  width: 100%;
+
+  margin: 20px auto;
+  padding: 20px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  color: var(--muted);
+
+  text-align: left;
+}
+
+#trailer>span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: var(--text);
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#icon {
+  border-radius: 10px;
+}
+
+#trailer iframe {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  border: 0;
+  border-radius: 14px;
+}
+
+/* Divider */
+
+hr {
+  width: min(1000px, 85%);
+
+  margin: 0 auto;
+
+  border: 0;
+  border-top: 1px solid #fff;
+}
+
+/* Main loading */
+
+#loading {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.spinner {
+  width: 42px;
+  height: 42px;
+
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-top-color: var(--white);
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+/* Detail loading */
+
+.detail-loading {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 35px;
+
+  gap: 15px;
+
+  color: var(--muted);
+}
+
+.detail-spinner {
+  width: 34px;
+  height: 34px;
+
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-top-color: var(--white);
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+.detail-error {
+  padding: 30px;
+
+  color: #ff453a;
+
+  text-align: center;
+}
+
+/* Error */
+
+.error-not-found {
+  text-align: center;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Segoe UI",
+    sans-serif;
+}
+
+h1.error-not-found {
+  margin-top: 15vh;
+  margin-bottom: 12px;
+
+  color: var(--text);
+
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 600;
+  letter-spacing: -1.5px;
+}
+
+p.error-not-found {
+  max-width: 500px;
+
+  margin: 0 auto;
+
+  padding: 0 20px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.error-img {
+  display: block;
+
+  width: 160px;
+  height: 160px;
+
+  margin: 40px auto 0;
+
+  object-fit: contain;
+
+  opacity: 0.75;
+}
+
+/* Animation */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+  .card {
+    min-height: auto;
+    padding: 70px 20px;
+  }
+
+  .form {
+    width: min(390px, calc(100% - 20px));
+  }
+
+  #poster {
+    width: min(300px, 70vw);
+  }
+
+  .header {
+    font-size: clamp(34px, 8vw, 52px);
+  }
+
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+  #n-1 {
+    margin-top: 70px;
+    font-size: clamp(32px, 10vw, 44px);
+  }
+
+  .form {
+    min-height: 300px;
+    padding: 30px 15px;
+    border-radius: 22px;
+  }
+
+  .form label,
+  #name {
+    width: 90%;
+  }
+
+  #poster {
+    width: min(270px, 78vw);
+    border-radius: 20px;
+  }
+
+  .card {
+    padding: 55px 12px;
+  }
+
+  .header {
+    font-size: clamp(32px, 10vw, 44px);
+    letter-spacing: -1.5px;
+  }
+
+  #genre,
+  #actors,
+  #imdb-rate,
+  #total,
+  #plot {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  #trailer {
+    padding: 12px;
+  }
+
+}
