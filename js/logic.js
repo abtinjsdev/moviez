@@ -1,5 +1,5 @@
 import { dataReady } from "./DomAdjuster.js";
-
+alert('test')
 dataReady.then(({ nameapi, typeapi }) => {
 
   const API_KEY =
