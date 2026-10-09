@@ -71,7 +71,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  background: rgba(30, 30, 32, 0.72);
+  background: rgb(30, 30, 32);
   border: 1px solid var(--border);
   border-radius: 28px;
 
@@ -102,15 +102,12 @@ body {
 
   cursor: pointer;
 
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease,
-    border-color 0.25s ease;
+
 }
 
 .form label:hover {
   background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.02);
+
 }
 
 .form input[type="radio"]:checked+label {
@@ -149,8 +146,9 @@ body {
 }
 
 #name:focus {
-  background: rgba(255, 255, 255, 0.11);
-  border-color: rgba(255, 255, 255, 0.35);
+  color: #000;
+  background: rgb(255, 253, 253);
+  border-color: rgba(255, 255, 255);
 }
 
 /* Button */
@@ -177,13 +175,8 @@ button {
     background 0.2s ease;
 }
 
-button:hover {
-  background: #e8e8ed;
-  transform: scale(1.04);
-}
-
 button:active {
-  transform: scale(0.98);
+  background-color: #fff;
 }
 
 /* Movie Card */
